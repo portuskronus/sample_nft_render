@@ -73,17 +73,33 @@
      // network_id: 2111,   // This network is yours, in the cloud.
      // production: true    // Treats this network as if it was a public net. (default: false)
      // }
-     goerli: {
-       provider: () => new HDWalletProvider(mnemonic, clientURL),
-       network_id: 5,       // Rinkeby's id
-       gas: 3000000,
-       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-       skipDryRun: true  ,   // Skip dry run before migrations? (default: false for public nets )
-       networkCheckTimeout: 10000000,
-     }
-   },
- 
+    
+    
+    //CODE FOR DEPLOYING ON GOERLI TESTNET (Similarly just a little editing would deploy on Eth Mainnet)
+     //goerli: {
+      // provider: () => new HDWalletProvider(mnemonic, clientURL),
+       //network_id: 5,       // Rinkeby's id
+      // gas: 3000000,
+      // confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      // skipDryRun: true  ,   // Skip dry run before migrations? (default: false for public nets )
+      // networkCheckTimeout: 10000000,
+    // }
+   //},
+    
+    
+    
+   rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, clientURL),
+      network_id: 4,       // Rinkeby's id
+      gas: 3000000,
+      confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true  ,   // Skip dry run before migrations? (default: false for public nets )
+      networkCheckTimeout: 10000000,
+    }
+  },
+
    // Set default mocha options here, use special reporters etc.
    mocha: {
      // timeout: 100000
